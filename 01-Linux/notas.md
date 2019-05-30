@@ -69,7 +69,7 @@ x-----x-----x-----------------------------------x
 x-----x-----x-----------------------------------x
 ```
 
-# 4: chmod
+# 4: Cambiar permisos y owner
 ```bash
 chmod 400 file
 chmod 777 file
