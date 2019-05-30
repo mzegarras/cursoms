@@ -51,12 +51,20 @@ x-------------x-------------x
 ```
 
 ```bash
-r	Permiso de lectura
-w	Permiso de escritura
-x	Permiso de ejecución
+r	Permiso de lectura (4)
+w	Permiso de escritura (2)
+x	Permiso de ejecución (1)
 ```
 
-===
-Lectura tiene el valor de 4
-Escritura tiene el valor de 2
-Ejecución tiene el valor de 1
+```bash
+x-----x-----x-----------------------------------x
+| rwx |  7  | Lectura, escritura y ejecución    |
+| rw- |  6  | Lectura, escritura        |
+| r-x |  5  | Lectura y ejecución       |
+| r-- |  4  | Lectura               |
+| -wx |  3  | Escritura y ejecución             |
+| -w- |  2  | Escritura                         |
+| --x |  1  | Ejecución             |
+| --- |  0  | Sin permisos          |
+x-----x-----x-----------------------------------x
+```
