@@ -36,12 +36,25 @@ ls -lta
 # 4: Permisos
 
 ```bash
--rw-r--r--    1  wada  users  4096 abr 13 19:30 archivo
+-rw-r--r--    1  wada  users  4096 abr 13 19:30 file
+drw-r--r--    1  wada  users  4096 abr 13 19:30 file
 ```
 
+```bash
+x-------------x-------------x
+|  permisos   |  pertenece  |
+x-------------x-------------x
+|  rwx------  | usuario     |
+|  ---r-x---  | grupo       |
+|  ------r-x  | otros       |
+x-------------x-------------x
+```
+
+```bash
 r	Permiso de lectura
 w	Permiso de escritura
 x	Permiso de ejecución
+```
 
 ===
 Lectura tiene el valor de 4
