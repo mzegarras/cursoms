@@ -27,9 +27,11 @@ cat data_demo.txt |grep 2
 ```
 
 # 3: Listar contenido
+```bash
 ls
 ls -lt
 ls -lta
+```
 
 # 4: Permisos
 
