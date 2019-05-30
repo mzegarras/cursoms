@@ -68,3 +68,20 @@ x-----x-----x-----------------------------------x
 | --- |  0  | Sin permisos          |
 x-----x-----x-----------------------------------x
 ```
+
+# 4: chmod
+```bash
+chmod 400 file
+chmod 777 file
+```
+
+miguel es owner y clients es el grupo propietario
+
+```bash
+chown miguel:clients demo.txt
+```
+
+miguel es owner
+```bash
+chown miguel demo.txt
+```
