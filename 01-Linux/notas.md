@@ -1,5 +1,5 @@
 
-# 1 bash / sh
+# 1: bash / sh
 
 ```bash
 #!/bin/sh
@@ -10,15 +10,38 @@ echo "123"
 #!/bin/bash
 echo "123"
 ```
+# 2: Sistema de archivos
 
-# Listar contenido
+```bash
+mkdir /data
+cd /data
+pwd
+echo "miguel" > data.txt
+```
 
-1.- bash / sh:
-2.- Listar el contenido de una carpeta
+```bash
+for i in `seq 1 10`;do;echo $i > data_demo.txt;done
+for i in `seq 1 10`;do;echo $i >> data_demo.txt;done
+tail -3 data_demo.txt
+cat data_demo.txt |grep 2
+```
+
+# 3: Listar contenido
 ls
+ls -lt
 ls -lta
-3.- Permisos
-–	Sin permiso
+
+# 4: Permisos
+
+```bash
+-rw-r--r--    1  wada  users  4096 abr 13 19:30 archivo
+```
+
 r	Permiso de lectura
 w	Permiso de escritura
 x	Permiso de ejecución
+
+===
+Lectura tiene el valor de 4
+Escritura tiene el valor de 2
+Ejecución tiene el valor de 1
