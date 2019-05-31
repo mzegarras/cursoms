@@ -21,8 +21,8 @@ $ sudo yum install docker-ce
 Add your user to the docker group with the following command.
 ```
 $ sudo usermod -aG docker $(whoami)
+o
 $ sudo usermod -aG docker $USER
-$ sudo chmod 666 /var/run/docker.sock
 ```
 
 Set Docker to start automatically at boot time:
@@ -33,6 +33,7 @@ $ sudo systemctl enable docker.service
 Finally, start the Docker service:
 ```
 $ sudo systemctl start docker.service
+$ sudo chmod 666 /var/run/docker.sock
 ```
 
 # 2: Install Docker Compose
@@ -64,3 +65,15 @@ To verify a successful Docker Compose installation, run:
 ```
 docker-compose version
 ```
+
+Uninstall old versions
+```
+sudo yum remove docker \
+                  docker-client \
+                  docker-client-latest \
+                  docker-common \
+                  docker-latest \
+                  docker-latest-logrotate \
+                  docker-logrotate \
+                  docker-engine
+```                  
