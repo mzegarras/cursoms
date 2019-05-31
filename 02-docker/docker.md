@@ -66,7 +66,7 @@ To verify a successful Docker Compose installation, run:
 docker-compose version
 ```
 
-Uninstall old versions
+# 3:  Uninstall old versions
 ```
 sudo yum remove docker \
                   docker-client \
