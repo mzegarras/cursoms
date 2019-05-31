@@ -21,17 +21,17 @@ docker stop a1051285c4ab
 docker start a1051285c4ab
 ```
 
-# 3: Eliminar containers
+# 4: Eliminar containers
 ```
 docker rm a1051285c4ab -f
 ```
 
-# 4: Conectarse container
+# 5: Conectarse container
 ```
 docker exec -it a1051285c4ab /bin/sh
 ```
 
-# 5: images
+# 6: images
 
 ```bash
 
