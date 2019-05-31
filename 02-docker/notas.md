@@ -1,16 +1,37 @@
 
-# 1: docker
+# 1: Crear containers
 
-```docker
+```
 docker run nginx
+docker run -p 8085:80 nginx
+docker run -p 8086:80 nginx:pipeline
+docker run -p 8087:80 nginx:latest
+docker run -e MYSQL_ROOT_PASSWORD=my-secret-pw -p 3306:3306 mysql:5.7
+```
+
+# 2: Listar containers
+```
 docker ps -a
 docker ps -aq
+```
+
+# 3: Iniciar y detener containers
+```
 docker stop a1051285c4ab
 docker start a1051285c4ab
+```
+
+# 3: Eliminar containers
+```
+docker rm a1051285c4ab -f
+```
+
+# 4: Conectarse container
+```
 docker exec -it a1051285c4ab /bin/sh
 ```
 
-# 2: images
+# 5: images
 
 ```bash
 
@@ -21,65 +42,4 @@ docker push
 
 docker login --username=yourhubusername --email=youremail@company.com
 docker login xxx.azurecr.io
-```
-
-
-# 3: Listar contenido
-```bash
-ls
-ls -lt
-ls -lta
-```
-
-# 4: Permisos
-
-```bash
--rw-r--r--    1  wada  users  4096 abr 13 19:30 file
-drw-r--r--    1  wada  users  4096 abr 13 19:30 file
-```
-
-```bash
-x-------------x-------------x
-|  permisos   |  pertenece  |
-x-------------x-------------x
-|  rwx------  | usuario     |
-|  ---r-x---  | grupo       |
-|  ------r-x  | otros       |
-x-------------x-------------x
-```
-
-```bash
-r	Permiso de lectura (4)
-w	Permiso de escritura (2)
-x	Permiso de ejecución (1)
-```
-
-```bash
-x-----x-----x-----------------------------------x
-| rwx |  7  | Lectura, escritura y ejecución    |
-| rw- |  6  | Lectura, escritura        |
-| r-x |  5  | Lectura y ejecución       |
-| r-- |  4  | Lectura               |
-| -wx |  3  | Escritura y ejecución             |
-| -w- |  2  | Escritura                         |
-| --x |  1  | Ejecución             |
-| --- |  0  | Sin permisos          |
-x-----x-----x-----------------------------------x
-```
-
-# 4: Cambiar permisos y owner
-```bash
-chmod 400 file
-chmod 777 file
-```
-
-miguel es owner y clients es el grupo propietario
-
-```bash
-chown miguel:clients demo.txt
-```
-
-miguel es owner
-```bash
-chown miguel demo.txt
 ```
