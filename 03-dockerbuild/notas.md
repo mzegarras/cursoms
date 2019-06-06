@@ -1,28 +1,20 @@
 # 1: Docker build
 
 ```
-docker logs #id2342
-docker logs #id2342 -f
+docker build -f Dockerbuild1 -t miguel:2.0.0 .
+docker run -p 8085:80 miguel:1.0.0
+
+docker build -f Dockerbuild2 -t miguel:2.0.0 .
+docker run -p 8085:8085 miguel:2.0.0
+
+docker build . -t mjava:1.0.0
+docker run -p 8085:8080 mjava:1.0.0
+
 ```
 
 # 2: Conectarse container
 ```
 docker exec -it a1051285c4ab /bin/sh
 cd /usr/share/nginx/html
-echo "<html><h1>demo</h1></html>" >> demo.html
 ```
 [Settings NGINX](https://docs.docker.com/samples/library/nginx/)
-
-
-# 3: volumnes
-
-```bash
-docker run -p 8085:80 -v $PWD/nginx:/usr/share/nginx/html nginx:latest
-
-docker run -v $PWD/mysql:/var/lib/mysql -e MYSQL_DATABASE=compras -e MYSQL_ROOT_PASSWORD=my-secret-pw -p 3306:3306 mysql:5.7
-```
-
-# 3: volumnes
-```bash
-docker inspect 718b76be7af7
-```

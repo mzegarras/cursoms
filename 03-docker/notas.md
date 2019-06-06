@@ -1,4 +1,4 @@
-# 1: Logs container
+# 1: Build container
 
 ```
 docker logs #id2342
@@ -7,7 +7,7 @@ docker logs #id2342 -f
 
 # 2: Conectarse container
 ```
-docker exec -it a1051285c4ab /bin/sh
+docker exec -it id-container /bin/sh
 cd /usr/share/nginx/html
 echo "<html><h1>demo</h1></html>" >> demo.html
 ```
