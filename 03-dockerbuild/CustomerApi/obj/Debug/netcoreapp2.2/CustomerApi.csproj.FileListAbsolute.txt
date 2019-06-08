@@ -1,0 +1,14 @@
+/Proyectos/Miguel/cursoms/03-dockerbuild/CustomerApi/bin/Debug/netcoreapp2.2/CustomerApi.deps.json
+/Proyectos/Miguel/cursoms/03-dockerbuild/CustomerApi/bin/Debug/netcoreapp2.2/CustomerApi.runtimeconfig.json
+/Proyectos/Miguel/cursoms/03-dockerbuild/CustomerApi/bin/Debug/netcoreapp2.2/CustomerApi.runtimeconfig.dev.json
+/Proyectos/Miguel/cursoms/03-dockerbuild/CustomerApi/bin/Debug/netcoreapp2.2/CustomerApi.dll
+/Proyectos/Miguel/cursoms/03-dockerbuild/CustomerApi/bin/Debug/netcoreapp2.2/CustomerApi.pdb
+/Proyectos/Miguel/cursoms/03-dockerbuild/CustomerApi/obj/Debug/netcoreapp2.2/CustomerApi.csprojAssemblyReference.cache
+/Proyectos/Miguel/cursoms/03-dockerbuild/CustomerApi/obj/Debug/netcoreapp2.2/CustomerApi.csproj.CoreCompileInputs.cache
+/Proyectos/Miguel/cursoms/03-dockerbuild/CustomerApi/obj/Debug/netcoreapp2.2/CustomerApi.RazorAssemblyInfo.cache
+/Proyectos/Miguel/cursoms/03-dockerbuild/CustomerApi/obj/Debug/netcoreapp2.2/CustomerApi.RazorAssemblyInfo.cs
+/Proyectos/Miguel/cursoms/03-dockerbuild/CustomerApi/obj/Debug/netcoreapp2.2/CustomerApi.AssemblyInfoInputs.cache
+/Proyectos/Miguel/cursoms/03-dockerbuild/CustomerApi/obj/Debug/netcoreapp2.2/CustomerApi.AssemblyInfo.cs
+/Proyectos/Miguel/cursoms/03-dockerbuild/CustomerApi/obj/Debug/netcoreapp2.2/CustomerApi.RazorTargetAssemblyInfo.cache
+/Proyectos/Miguel/cursoms/03-dockerbuild/CustomerApi/obj/Debug/netcoreapp2.2/CustomerApi.dll
+/Proyectos/Miguel/cursoms/03-dockerbuild/CustomerApi/obj/Debug/netcoreapp2.2/CustomerApi.pdb
