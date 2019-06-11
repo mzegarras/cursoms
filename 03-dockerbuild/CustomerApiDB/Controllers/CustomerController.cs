@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
+using CustomerApi.Data;
 namespace CustomerApi.Controllers{
     [Route("api/[controller]")]
     [ApiController]
@@ -16,10 +17,9 @@ namespace CustomerApi.Controllers{
         public ActionResult<IEnumerable<string>> Get()
         {
 
-            string getEnv = Environment.GetEnvironmentVariable("CUSTOMER_NAME");
+            var dbConnection = DBConnection.Instance();
 
-
-            return new string[] { "value2", "value3",getEnv };
+            return new string[] { "value2", "value3" };
         }
 
     }

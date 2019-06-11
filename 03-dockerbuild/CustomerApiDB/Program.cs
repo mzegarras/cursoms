@@ -18,7 +18,18 @@ namespace CustomerApi
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+            /*WebHost.CreateDefaultBuilder(args)
+                .UseStartup<Startup>();*/
+
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>();
+            .ConfigureAppConfiguration((hostingContext, config) =>
+            {
+                // Call additional providers here as needed.
+                // Call AddEnvironmentVariables last if you need to allow
+                // environment variables to override values from other 
+                // providers.
+                config.AddEnvironmentVariables(prefix: "APP_DEMO_");
+            })
+            .UseStartup<Startup>();
     }
 }
