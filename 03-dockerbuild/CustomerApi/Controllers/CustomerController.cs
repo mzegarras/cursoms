@@ -9,11 +9,17 @@ namespace CustomerApi.Controllers{
     [ApiController]
     public class CustomersController : ControllerBase
     {
+
+        
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            return new string[] { "value2", "value3" };
+
+            string getEnv = Environment.GetEnvironmentVariable("CUSTOMER_NAME");
+
+
+            return new string[] { "value2", "value3",getEnv };
         }
 
     }
