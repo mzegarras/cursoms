@@ -12,15 +12,9 @@ docker run -p 8085:8080 mjava:1.0.0
 
 ```
 
-# 2: Conectarse container
-```
-docker exec -it a1051285c4ab /bin/sh
-cd /usr/share/nginx/html
-```
-[Settings NGINX](https://docs.docker.com/samples/library/nginx/)
 
 
-# 3: Generar binario
+# 1: Generar binario
 
 
 ```
@@ -28,7 +22,7 @@ dotnet publish -c Release
 dotnet publish -c Debug
 ```
 
-# 3: Generar compose
+# 2: Generar compose
 ```
 docker-compose build
 ```
