@@ -12,9 +12,12 @@ docker run -p 8085:8080 mjava:1.0.0
 
 ```
 
+# 2: Add reference
+```
+https://www.nuget.org/packages/MySql.Data/
+```
 
-
-# 1: Generar binario
+# 3: Generar binario
 
 
 ```
@@ -22,7 +25,15 @@ dotnet publish -c Release
 dotnet publish -c Debug
 ```
 
-# 2: Generar compose
+# 4: Generar docker
 ```
 docker-compose build
+docker-compose up
+docker-compose down
+docker-compose rm
+```
+
+# 5: Add redis
+```
+dotnet add package Microsoft.Extensions.Caching.Redis --version 2.2.0
 ```
