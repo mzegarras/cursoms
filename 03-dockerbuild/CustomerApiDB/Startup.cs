@@ -26,6 +26,16 @@ namespace CustomerApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            services.AddDistributedRedisCache (option =>
+            {
+                //option.Configuration = "localhost:6379,password=password";
+                option.Configuration = "cache:6379,password=password";
+
+                //option.InstanceName = "appcache";
+                
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
