@@ -7,6 +7,14 @@ services:
         - 3306:3306
       environment:
         MYSQL_ROOT_PASSWORD: password
-        MYSQL_DATABASE: demo
+        MYSQL_DATABASE: appdb
         MYSQL_USER: demouser
         MYSQL_PASSWORD: demopwd
+  customers:
+    image: "customers"
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    ports:
+      - 8080:8080
+      #- 8091:8091

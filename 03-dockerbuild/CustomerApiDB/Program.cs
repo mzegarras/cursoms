@@ -24,6 +24,11 @@ namespace CustomerApi
             WebHost.CreateDefaultBuilder(args)
             .ConfigureAppConfiguration((hostingContext, config) =>
             {
+                IConfigurationRoot configuration = new ConfigurationBuilder()
+            .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+            .AddJsonFile("appsettings.json")
+            .Build();
+
                 // Call additional providers here as needed.
                 // Call AddEnvironmentVariables last if you need to allow
                 // environment variables to override values from other 

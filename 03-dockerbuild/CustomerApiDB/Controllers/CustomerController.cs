@@ -18,7 +18,7 @@ namespace CustomerApi.Controllers{
         {
 
             var dbConnection = DBConnection.Instance();
-
+dbConnection.IsConnect();
             return new string[] { "value2", "value3" };
         }
 

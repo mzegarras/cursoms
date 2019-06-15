@@ -18,3 +18,17 @@ docker exec -it a1051285c4ab /bin/sh
 cd /usr/share/nginx/html
 ```
 [Settings NGINX](https://docs.docker.com/samples/library/nginx/)
+
+
+# 3: Generar binario
+
+
+```
+dotnet publish -c Release
+dotnet publish -c Debug
+```
+
+# 3: Generar compose
+```
+docker-compose build
+```

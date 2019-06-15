@@ -1,3 +1,4 @@
+using System;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
@@ -9,14 +10,7 @@ namespace CustomerApi.Data
         {
         }
 
-        private string databaseName = string.Empty;
-        public string DatabaseName
-        {
-            get { return databaseName; }
-            set { databaseName = value; }
-        }
 
-        public string Password { get; set; }
         private MySqlConnection connection = null;
         public MySqlConnection Connection
         {
@@ -35,7 +29,8 @@ namespace CustomerApi.Data
         {
             if (Connection == null)
             {
-                string connectionString = Environment.GetEnvironmentVariable("APP_DEMO_MYSQ_CONNECTION_STRING");
+                //string connectionString = "Server=localhost;Database=appdb;Uid=demouser;Pwd=demopwd;";
+                string connectionString = "Server=db;Database=appdb;Uid=demouser;Pwd=demopwd;";
                 System.Console.WriteLine(connectionString);
                 
                 if (String.IsNullOrEmpty(connectionString))
