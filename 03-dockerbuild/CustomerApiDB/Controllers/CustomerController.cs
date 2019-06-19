@@ -26,6 +26,10 @@ namespace CustomerApi.Controllers{
 
             var dbConnection = DBConnection.Instance();
             dbConnection.IsConnect();
+
+            var messageUtil = MessageUtil.Instance();
+            messageUtil.IsConnect();
+            messageUtil.sendMessage("hola");
             return new string[] { "value2", "value3" };
         }
 
@@ -55,7 +59,6 @@ namespace CustomerApi.Controllers{
             System.Console.WriteLine("POST");
             System.Console.WriteLine(String.Format( KEY_CACHE,id),id);
             System.Console.WriteLine("********");
-
             _distributedCache.SetString(String.Format(KEY_CACHE,id), value);
         }
 
