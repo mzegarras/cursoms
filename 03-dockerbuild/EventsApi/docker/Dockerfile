@@ -6,9 +6,8 @@ WORKDIR /app
 COPY ./bin/Release/netcoreapp2.2/publish/ /app
 
 ENV ASPNETCORE_URLS=http://+:8080
-ENV CUSTOMER_NAME="cliente1"
 ENV APP_NET_BROKER_URI="activemq:tcp://activemq1:61616"
 
 EXPOSE 8080
 
-ENTRYPOINT ["dotnet", "/app/CustomerApi.dll"]
+ENTRYPOINT ["dotnet", "/app/NotificationApi.dll"]

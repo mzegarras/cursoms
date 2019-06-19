@@ -55,4 +55,23 @@ services:
       #- 8091:8091
     environment:
       MQ_URL: "tcp://activemq1:61616"
-  
+  notifications:
+    image: "notifications:latest"
+    #ports:
+      #- 8081:8080
+      #- 8091:8091
+    environment:
+      APP_NET_BROKER_URI: "activemq:tcp://activemq1:61616"
+    restart: on-failure
+    depends_on:
+      - activemq1
+  events:
+    image: "events:latest"
+    #ports:
+      #- 8081:8080
+      #- 8091:8091
+    environment:
+      APP_NET_BROKER_URI: "activemq:tcp://activemq1:61616"
+    restart: on-failure
+    depends_on:
+      - activemq1

@@ -27,9 +27,6 @@ namespace CustomerApi.Controllers{
             var dbConnection = DBConnection.Instance();
             dbConnection.IsConnect();
 
-            var messageUtil = MessageUtil.Instance();
-            messageUtil.IsConnect();
-            messageUtil.sendMessage("hola");
             return new string[] { "value2", "value3" };
         }
 
@@ -60,6 +57,12 @@ namespace CustomerApi.Controllers{
             System.Console.WriteLine(String.Format( KEY_CACHE,id),id);
             System.Console.WriteLine("********");
             _distributedCache.SetString(String.Format(KEY_CACHE,id), value);
+
+            var messageUtil = MessageUtil.Instance();
+            messageUtil.IsConnect();
+            messageUtil.sendMessage(String.Format("Customer:Created: {0}",id));
+            messageUtil.Close();
+            
         }
 
         // PUT api/values/5
@@ -80,6 +83,11 @@ namespace CustomerApi.Controllers{
             System.Console.WriteLine(String.Format(KEY_CACHE,id),id);
             System.Console.WriteLine("********");
             _distributedCache.Remove(String.Format(KEY_CACHE,id));
+
+            var messageUtil = MessageUtil.Instance();
+            messageUtil.IsConnect();
+            messageUtil.sendMessage(String.Format("Customer:Created: {0}",id));
+            messageUtil.Close();
         }
 
 

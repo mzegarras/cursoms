@@ -30,9 +30,14 @@ namespace CustomerApi.Data
         {
             if (session == null)
             {
-                string brokerUri = $"activemq:tcp://activemq1:61616";  // Default port
-                //string brokerUri = $"activemq:tcp://localhost:61616";  // Default port
-                System.Console.WriteLine(brokerUri);
+                 //string brokerUri = $"activemq:tcp://activemq1:61616";  // Default port
+                string brokerUri = Environment.GetEnvironmentVariable("APP_NET_BROKER_URI");
+            
+                if(String.IsNullOrEmpty(brokerUri)){
+                        brokerUri = $"activemq:tcp://localhost:61616";  // Default port
+                }
+            
+                Console.WriteLine(brokerUri);
                 
                 if (String.IsNullOrEmpty(brokerUri))
                     return false;
@@ -59,8 +64,11 @@ namespace CustomerApi.Data
 
         public void Close()
         {
-             session.Close();
+            session.Close();
             connection.Close();
+
+            session = null;
+            connection = null;
         }        
     }
 }

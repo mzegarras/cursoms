@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace CustomerApi
+namespace NotificationApi
 {
     public class Program
     {
@@ -18,23 +18,25 @@ namespace CustomerApi
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-            /*WebHost.CreateDefaultBuilder(args)
+           /* WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>();*/
 
-            WebHost.CreateDefaultBuilder(args)
+          WebHost.CreateDefaultBuilder(args)
             .ConfigureAppConfiguration((hostingContext, config) =>
             {
                 IConfigurationRoot configuration = new ConfigurationBuilder()
             .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
-            .AddJsonFile("appsettings.json")
+            //.AddJsonFile("appsettings.json")
             .Build();
 
                 // Call additional providers here as needed.
                 // Call AddEnvironmentVariables last if you need to allow
                 // environment variables to override values from other 
                 // providers.
+                //config.AddEnvironmentVariables(prefix: "APP_NET_");
                 config.AddEnvironmentVariables();
             })
             .UseStartup<Startup>();
+            
     }
 }
