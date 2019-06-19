@@ -34,3 +34,9 @@ HGETALL appcachecustomer:6
 
 
 
+
+
+#6: Publish subcribe
+```
+dotnet add package Apache.NMS.ActiveMQ --version 1.7.2
+```
