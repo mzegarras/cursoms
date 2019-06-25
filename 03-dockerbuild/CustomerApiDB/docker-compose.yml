@@ -1,5 +1,9 @@
 version: '3.3'
 services:
+  proxy:
+    image: msproxy:latest
+    ports:
+      - 8085:8085
   db:
       image: mysql:5.7
       restart: always
@@ -54,8 +58,8 @@ services:
       - 8080:8080
       #- 8091:8091
     environment:
-      MQ_URL: "tcp://activemq1:61616"
-  notifications:
+      APP_NET_BROKER_URI: "tcp://activemq1:61616"
+  notifications1:
     image: "notifications:latest"
     #ports:
       #- 8081:8080
@@ -65,7 +69,7 @@ services:
     restart: on-failure
     depends_on:
       - activemq1
-  events:
+  events1:
     image: "events:latest"
     #ports:
       #- 8081:8080
