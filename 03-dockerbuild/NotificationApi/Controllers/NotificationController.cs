@@ -10,14 +10,14 @@ namespace NotificationApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ValuesController : ControllerBase
+    public class NotificationController : ControllerBase
     {
         private readonly IHostedService _demoService;
 
-        public ValuesController(IHostedService demoService)
+        public NotificationController(IHostedService demoService)
 {
     _demoService = demoService;
-    
+
 }
 
         // GET api/values
