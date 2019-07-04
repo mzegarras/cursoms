@@ -1,0 +1,73 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: service02
+  labels:
+    app: service02
+spec:
+  ports:
+    - port: 8080
+      targetPort: 8080
+  selector:
+    app: service02
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service02
+spec:
+  selector:
+    matchLabels:
+      app: service02
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: service02
+    spec:
+      containers:
+        - name: service02
+          image: service02
+          resources:
+            limits:
+              cpu: 600m
+              memory: 1024Mi
+            requests:
+              cpu: 300m
+              memory: 512Mi
+          livenessProbe:
+             httpGet:
+               path: /health
+               port: 8080
+             initialDelaySeconds: 50
+             periodSeconds: 10
+             timeoutSeconds: 10
+             successThreshold: 1
+             failureThreshold: 3
+          readinessProbe:
+             httpGet:
+               path: /health
+               port: 8080
+             initialDelaySeconds: 50
+             periodSeconds: 10
+             timeoutSeconds: 10
+             successThreshold: 1
+             failureThreshold: 3
+          ports:
+            - containerPort: 8080
+---
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: service02
+  labels:
+    app: service02
+spec:
+  minReplicas: 1
+  maxReplicas: 4
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: service02
+  targetCPUUtilizationPercentage: 100
