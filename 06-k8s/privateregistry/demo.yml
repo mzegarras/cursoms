@@ -29,6 +29,13 @@ spec:
       containers:
         - name: ms-container
           image: xxxx.azurecr.io/ms-container:latest
+          resources:
+            limits:
+              cpu: 150m
+              memory: 30Mi
+            requests:
+              cpu: 100m
+              memory: 10Mi
           livenessProbe:
              httpGet:
                path: /health
