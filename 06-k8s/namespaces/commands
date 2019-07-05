@@ -1,5 +1,10 @@
 
+kubectl config get-contexts
+kubectl config view
 
+kubectl create namespace dev
+kubectl create namespace qa
+kubectl create namespace prd
 
 kubectl config set-context $(kubectl config current-context) --namespace=qa
 kubectl config set-context $(kubectl config current-context) --namespace=dev
