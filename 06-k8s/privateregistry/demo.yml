@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ms-container
+  labels:
+    app: ms-container
+spec:
+  ports:
+    - port: 8080
+      targetPort: 8080
+  selector:
+    app: ms-container
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-container
+spec:
+  selector:
+    matchLabels:
+      app: ms-container
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ms-container
+    spec:
+      containers:
+        - name: ms-container
+          image: xxxx.azurecr.io/ms-container:latest
+          ports:
+            - containerPort: 8080
