@@ -56,3 +56,18 @@ spec:
              failureThreshold: 3
           ports:
             - containerPort: 8080
+---
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: ms-container
+  labels:
+    app: ms-container
+spec:
+  minReplicas: 1
+  maxReplicas: 4
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: ms-container
+  targetCPUUtilizationPercentage: 25
