@@ -29,5 +29,23 @@ spec:
       containers:
         - name: ms-container
           image: xxxx.azurecr.io/ms-container:latest
+          livenessProbe:
+             httpGet:
+               path: /health
+               port: 8080
+             initialDelaySeconds: 50
+             periodSeconds: 10
+             timeoutSeconds: 10
+             successThreshold: 1
+             failureThreshold: 3
+          readinessProbe:
+             httpGet:
+               path: /health
+               port: 8080
+             initialDelaySeconds: 50
+             periodSeconds: 10
+             timeoutSeconds: 10
+             successThreshold: 1
+             failureThreshold: 3
           ports:
             - containerPort: 8080
