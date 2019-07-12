@@ -1,0 +1,15 @@
+
+mongo:
+  host: hostcustomers
+  port: 1010
+  username: userad
+  password: pwd
+  uri: mongodb://${mongo.username}:${mongo.password}@${mongo.host}:${mongo.port}/?ssl=true&replicaSet=globaldb
+spring:
+  jackson:
+    time-zone: America/Lima
+    locale: es_PE
+  data:
+    mongodb:
+      #uri: mongodb://${mongo.username}:${mongo.password}@${mongo.host}:${mongo.port}/?ssl=true&replicaSet=globaldb
+      database: theshire
