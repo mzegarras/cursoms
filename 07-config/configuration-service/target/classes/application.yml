@@ -1,0 +1,23 @@
+
+
+server:
+  port: 8888
+
+logging.level:
+  root: INFO
+  org.springframework.cloud.config: INFO
+
+spring:
+  application:
+    name: configurations
+  cloud:
+    config:
+      server:
+        health:
+          enabled: false
+        encrypt:
+          enabled: false
+        git:
+          searchPaths: '{application}'
+          #uri: ${GIT_URI}
+          uri: /Proyectos/Miguel/data
