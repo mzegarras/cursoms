@@ -17,7 +17,7 @@ echo "<html><h1>demo</h1></html>" >> demo.html
 # 3: volumnes
 
 ```bash
-docker run -p 8085:80 -v $PWD/nginx:/usr/share/nginx/html nginx:latest
+docker run -p 8080:80 -v $PWD/nginx:/usr/share/nginx/html nginx:latest
 
 docker run -v $PWD/mysql:/var/lib/mysql -e MYSQL_DATABASE=compras -e MYSQL_ROOT_PASSWORD=my-secret-pw -p 3306:3306 mysql:5.7
 ```

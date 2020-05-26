@@ -1,12 +1,16 @@
+ssh-keygen
+chmod 400 taller1
+ssh -i taller1 mzegarra@35.193.42.41
+
 
 # 1: Crear containers
 
 ```
-docker run nginx
-docker run -p 8085:80 nginx
+docker run -d nginx
+docker run -d -p 8080:80 nginx
 docker run -p 8086:80 nginx:pipeline
 docker run -p 8087:80 nginx:latest
-docker run -e MYSQL_ROOT_PASSWORD=my-secret-pw -p 3306:3306 mysql:5.7
+docker run -d -e MYSQL_ROOT_PASSWORD=my-secret-pw -p 3306:3306 mysql:5.7
 ```
 
 # 2: Listar containers
@@ -43,3 +47,7 @@ docker push
 docker login --username=yourhubusername --email=youremail@company.com
 docker login xxx.azurecr.io
 ```
+
+docker run -d -p 8080:80 xxx.azurecr.io/nginx
+docker tag nginx:latest manudemo.azurecr.io/pepe:1.0.0
+docker push manudemo.azurecr.io/pepe:1.0.0
